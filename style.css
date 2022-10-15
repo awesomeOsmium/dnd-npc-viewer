@@ -1,0 +1,89 @@
+body {
+    background-color: black;
+}
+
+.art-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-gap: 2px;
+    grid-auto-rows: minmax(80px, auto);
+    grid-auto-flow: dense;
+    /* align-items: stretch; */
+}
+
+/* .art-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: safe space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 0;
+    margin: 0;
+} */
+
+.card {
+    min-height: 100px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.art-1 {
+    /* max-width: 100%; */
+    grid-column-end: span 1;
+    grid-row-end: span 1;
+    min-height: 100px;
+}
+
+.art-2 {
+    /* max-width: 100%; */
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+    min-height: 200px;
+}
+
+.art-3 {
+    /* max-width: 100%; */
+    grid-column-end: span 3;
+    grid-row-end: span 3;
+    min-height: 300px;
+}
+
+.art-4 {
+    /* max-width: 100%; */
+    grid-column-end: span 4;
+    grid-row-end: span 4;
+    min-height: 400px;
+}
+
+/* .art {
+    display: inline-flex;
+    image-rendering: optimizeQuality;
+    padding: 2px;
+    width: 128px;
+    height: 128px;
+}
+
+.bigArt {
+    display: inline-flex;
+    image-rendering: optimizeQuality;
+    padding: 4px;
+    width: 256px;
+    height: 256px;
+} */
+
+.art:nth-child(even) {
+    background-color: black;
+}
+
+.art:nth-child(odd) {
+    background-color: white;
+}
+
+.bigArt:nth-child(even) {
+    background-color: black;
+}
+
+.bigArt:nth-child(odd) {
+    background-color: white;
+}
