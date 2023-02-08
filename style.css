@@ -1,5 +1,14 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 body {
     background-color: black;
+    background-image: url("./assets/09-huong-full.png");
+    background-repeat: repeat-y;
+    background-position-x: 0;
+    background-position-y: 0;
+    background-size: cover;
 }
 
 .art-container {
@@ -22,11 +31,144 @@ body {
 } */
 
 .card {
+    position: relative;
+    display: inline-block;
     min-height: 100px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
+    /* transition-delay: 100ms; */
+    /* transition-timing-function: ease-in-out; */
 }
+
+.card:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    z-index: 1;
+}
+
+.dead {
+    filter: grayscale(1);
+    -webkit-filter: grayscale(1);
+    -moz-filter: grayscale(1);
+}
+
+.dead:hover {
+    filter: grayscale(0);
+    -webkit-filter: grayscale(0);
+    -moz-filter: grayscale(0);
+}
+
+/* Below CSS From https://www.w3schools.com/css/css_tooltip.asp */
+
+.card .tooltiptext {
+    white-space: pre-line;
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    /* padding: 5px 0; */
+    border-radius: 6px;
+    left: 0%;
+    top: 100%;
+    opacity: 0.8;
+
+    /* Positioning tooltip text */
+    position: absolute;
+    z-index: 2;
+
+    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
+    border-bottom: var(--h) solid #0000;
+    --h: 5px;
+    --w: 10px;
+    /* --p: 50%; */
+    --p: 45.5%
+}
+
+.art-1 .tooltiptext {
+    min-width: 100px;
+    max-width: 100px;
+    padding: 20px;
+
+    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
+    /* FLIPPED VERTICALLY */
+    clip-path: polygon(0                           var(--h), /* [1] */
+                       calc(var(--p) - var(--w)/2) var(--h), /* [2] */
+                       var(--p)                    0, /* [3] */
+                       calc(var(--p) + var(--w)/2) var(--h), /* [4] */
+                       100%                         var(--h), /* [5] */
+                       100%                         calc(100% - var(--h)), /* [6] */
+                       0                           calc(100% - var(--h)) /* [7] */
+                      );
+    /* ORIGINAL */
+    /* clip-path: polygon(0                           0,
+                          100%                        0,
+                          100%                        calc(100% - var(--h)),
+                          calc(var(--p) - var(--w)/2) calc(100% - var(--h)),
+                          var(--p)                    100%,
+                          calc(var(--p) + var(--w)/2) calc(100% - var(--h)),
+                          0                           calc(100% - var(--h))
+                         ); */
+}
+
+.art-2 .tooltiptext {
+    min-width: 200px;
+    max-width: 200px;
+    padding: 20px;
+
+    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
+    clip-path: polygon(0                           var(--h), /* [1] */
+                       calc(var(--p) - var(--w)/2) var(--h), /* [2] */
+                       var(--p)                    0, /* [3] */
+                       calc(var(--p) + var(--w)/2) var(--h), /* [4] */
+                       100%                        var(--h), /* [5] */
+                       100%                        calc(100% - var(--h)), /* [6] */
+                       0                           calc(100% - var(--h)) /* [7] */
+                      );
+}
+
+.art-3 .tooltiptext {
+    min-width: 300px;
+    max-width: 300px;
+    padding: 20px;
+
+    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
+    clip-path: polygon(0                           var(--h), /* [1] */
+                       calc(var(--p) - var(--w)/2) var(--h), /* [2] */
+                       var(--p)                    0, /* [3] */
+                       calc(var(--p) + var(--w)/2) var(--h), /* [4] */
+                       100%                        var(--h), /* [5] */
+                       100%                        calc(100% - var(--h)), /* [6] */
+                       0                           calc(100% - var(--h)) /* [7] */
+                      );
+}
+
+.art-4 .tooltiptext {
+    /* 400 - (padding) = 400 - (20 * 2) = 360 */
+    min-width: 400px;
+    max-width: 400px;
+    padding: 20px;
+
+    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
+    clip-path: polygon(0                           var(--h), /* [1] */
+                       calc(var(--p) - var(--w)/2) var(--h), /* [2] */
+                       var(--p)                    0, /* [3] */
+                       calc(var(--p) + var(--w)/2) var(--h), /* [4] */
+                       100%                        var(--h), /* [5] */
+                       100%                        calc(100% - var(--h)), /* [6] */
+                       0                           calc(100% - var(--h)) /* [7] */
+                      );
+}
+
+.card:hover .tooltiptext {
+    /* transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05); */
+    visibility: visible;
+}
+
+/* Above CSS From https://www.w3schools.com/css/css_tooltip.asp */
 
 .art-1 {
     /* max-width: 100%; */
