@@ -25,6 +25,17 @@ function setShadowHedgeHogs(){
         "art-07":"abbyShadow",
         "art-08":"coilbaynShadow",
         "art-09":"huongShadow",
+
+        "art-14":"parliamentShadow",
+        "art-23":"parliamentShadow",
+        "art-24":"parliamentShadow",
+        "art-25":"parliamentShadow",
+        "art-26":"parliamentShadow",
+        "art-27":"parliamentShadow",
+        "art-28":"parliamentShadow",
+        "art-29":"parliamentShadow",
+        "art-30":"parliamentShadow",
+
         "art-39":"chembsShadow",
         "art-47":"beetusShadow",
         "art-49":"chembsShadow",

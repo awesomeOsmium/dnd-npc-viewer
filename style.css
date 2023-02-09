@@ -70,7 +70,7 @@ body {
 }
 
 .absolutumShadow:hover {
-    transition-duration: 200ms;
+    transition-duration: 400ms;
     box-shadow: 4px 4px 4px black,
                 -4px 4px 4px black,
                 4px -4px 4px black,
@@ -78,7 +78,7 @@ body {
 }
 
 .beetusShadow:hover {
-    transition-duration: 200ms;
+    transition-duration: 400ms;
     box-shadow: 4px 4px 4px black,
                 -4px 4px 4px black,
                 4px -4px 4px black,
@@ -107,6 +107,14 @@ body {
                 -32px 32px 32px 32px black,
                 32px -32px 32px 32px black,
                 -32px -32px 32px 32px black;
+}
+
+.parliamentShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px #444,
+                -4px 4px 4px #444,
+                4px -4px 4px #444,
+                -4px -4px 4px #444;
 }
 
 .dead {
