@@ -53,6 +53,62 @@ body {
     z-index: 1;
 }
 
+.shadowHedgehog:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px black,
+                -4px 4px 4px black,
+                4px -4px 4px black,
+                -4px -4px 4px black;
+}
+
+.abbyShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px white,
+                -4px 4px 4px white,
+                4px -4px 4px white,
+                -4px -4px 4px white;
+}
+
+.absolutumShadow:hover {
+    transition-duration: 200ms;
+    box-shadow: 4px 4px 4px black,
+                -4px 4px 4px black,
+                4px -4px 4px black,
+                -4px -4px 4px black;
+}
+
+.beetusShadow:hover {
+    transition-duration: 200ms;
+    box-shadow: 4px 4px 4px black,
+                -4px 4px 4px black,
+                4px -4px 4px black,
+                -4px -4px 4px black;
+}
+
+.coilbaynShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px #ae873c, 4px 4px 4px #5b6555,
+                -4px 4px 4px #ae873c, -4px 4px 4px #5b6555,
+                4px -4px 4px #ae873c, 4px -4px 4px #5b6555,
+                -4px -4px 4px #ae873c, -4px -4px 4px #5b6555;
+}
+
+.chembsShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px black, 4px 4px 4px #a00,
+                -4px 4px 4px black, -4px 4px 4px #a00,
+                4px -4px 4px black, 4px -4px 4px #a00,
+                -4px -4px 4px black, -4px -4px 4px #a00;
+}
+
+.huongShadow:hover {
+    transition-duration: 1600ms;
+    box-shadow: 32px 32px 32px 32px black,
+                -32px 32px 32px 32px black,
+                32px -32px 32px 32px black,
+                -32px -32px 32px 32px black;
+}
+
 .dead {
     filter: grayscale(1);
     -webkit-filter: grayscale(1);
@@ -68,13 +124,14 @@ body {
 /* Below CSS From https://www.w3schools.com/css/css_tooltip.asp */
 
 .card .tooltiptext {
-    white-space: pre-line;
+    font-size: smaller;
+    word-wrap:break-word;
     visibility: hidden;
     background-color: black;
     color: #fff;
     text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
+    /* padding: 5px 0; */
+    border-radius: 0px;
     right: 0;
     top: 100%;
     opacity: 0.8;
@@ -99,7 +156,7 @@ body {
     /* FLIPPED VERTICALLY */
     clip-path: polygon(0                           var(--h), /* [1] */
                        calc(var(--p) - var(--w)/2) var(--h), /* [2] */
-                       var(--p)                    0, /* [3] */
+                       var(--p)                    0,        /* [3] */
                        calc(var(--p) + var(--w)/2) var(--h), /* [4] */
                        100%                         var(--h), /* [5] */
                        100%                         calc(100% - var(--h)), /* [6] */
@@ -124,7 +181,7 @@ body {
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
     clip-path: polygon(0                           var(--h), /* [1] */
                        calc(var(--p) - var(--w)/2) var(--h), /* [2] */
-                       var(--p)                    0, /* [3] */
+                       var(--p)                    0,        /* [3] */
                        calc(var(--p) + var(--w)/2) var(--h), /* [4] */
                        100%                        var(--h), /* [5] */
                        100%                        calc(100% - var(--h)), /* [6] */
@@ -140,7 +197,7 @@ body {
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
     clip-path: polygon(0                           var(--h), /* [1] */
                        calc(var(--p) - var(--w)/2) var(--h), /* [2] */
-                       var(--p)                    0, /* [3] */
+                       var(--p)                    0,        /* [3] */
                        calc(var(--p) + var(--w)/2) var(--h), /* [4] */
                        100%                        var(--h), /* [5] */
                        100%                        calc(100% - var(--h)), /* [6] */
@@ -156,7 +213,7 @@ body {
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
     clip-path: polygon(0                           var(--h), /* [1] */
                        calc(var(--p) - var(--w)/2) var(--h), /* [2] */
-                       var(--p)                    0, /* [3] */
+                       var(--p)                    0,        /* [3] */
                        calc(var(--p) + var(--w)/2) var(--h), /* [4] */
                        100%                        var(--h), /* [5] */
                        100%                        calc(100% - var(--h)), /* [6] */
