@@ -12,8 +12,13 @@ body {
 }
 
 .art-container {
+    /* https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+    /* auto-fit is the wrong choice here (despite having a seemingly identical result to auto-fill)
+    because if you had a viewport long enough to show all characters in a single row, auto-fit would
+    begin to stretch the characters to fit the container, which is NOT ideal for this use case */
     grid-gap: 2px;
     grid-auto-rows: minmax(80px, auto);
     grid-auto-flow: dense;
@@ -68,27 +73,26 @@ body {
     background-color: black;
     color: #fff;
     text-align: center;
-    /* padding: 5px 0; */
+    padding: 5px 0;
     border-radius: 6px;
-    left: 0%;
+    right: 0;
     top: 100%;
     opacity: 0.8;
 
     /* Positioning tooltip text */
     position: absolute;
-    z-index: 2;
+    z-index: 3;
 
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
     border-bottom: var(--h) solid #0000;
     --h: 5px;
     --w: 10px;
-    /* --p: 50%; */
-    --p: 45.5%
+    --p: 50%
 }
 
 .art-1 .tooltiptext {
-    min-width: 100px;
-    max-width: 100px;
+    min-width: 65;
+    max-width: 65px;
     padding: 20px;
 
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
@@ -113,8 +117,8 @@ body {
 }
 
 .art-2 .tooltiptext {
-    min-width: 200px;
-    max-width: 200px;
+    min-width: 170px;
+    max-width: 170px;
     padding: 20px;
 
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
@@ -129,8 +133,8 @@ body {
 }
 
 .art-3 .tooltiptext {
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 275px;
+    max-width: 275px;
     padding: 20px;
 
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
@@ -145,9 +149,8 @@ body {
 }
 
 .art-4 .tooltiptext {
-    /* 400 - (padding) = 400 - (20 * 2) = 360 */
-    min-width: 400px;
-    max-width: 400px;
+    min-width: 380px;
+    max-width: 380px;
     padding: 20px;
 
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
@@ -162,10 +165,8 @@ body {
 }
 
 .card:hover .tooltiptext {
-    /* transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05); */
     visibility: visible;
+    z-index: 3;
 }
 
 /* Above CSS From https://www.w3schools.com/css/css_tooltip.asp */
