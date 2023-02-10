@@ -133,7 +133,7 @@ body {
 
 .card .tooltiptext {
     font-size: smaller;
-    word-wrap:break-word;
+    word-wrap: break-word;
     visibility: hidden;
     background-color: black;
     color: #fff;
