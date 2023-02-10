@@ -17,7 +17,7 @@ function setDeadCharacters(){
     }
 }
 
-function setShadowHedgeHogs(){
+function setShadowHedgeHogs(lastIndex){
     let basic = "4px 4px 4px black, -4px 4px 4px black, 4px -4px 4px black, -4px -4px 4px black";
     let idPrefix = "art-";
     let ids = {
@@ -40,7 +40,7 @@ function setShadowHedgeHogs(){
         "art-47":"beetusShadow",
         "art-49":"chembsShadow",
     };
-    for (let i = 1; i < 53; i++){
+    for (let i = 1; i < lastIndex; i++){
         // Set up current id
         var currId = idPrefix + "";
         if (i < 10){
@@ -86,6 +86,7 @@ function isIn(item, list){
 }
 
 function clickDeath(event, num){
+    let lastIndex = 56;
     // if (true){
     if ((d(num) + 1) === 1){
         console.log("Killing...");
@@ -95,7 +96,7 @@ function clickDeath(event, num){
                         idPrefix + "21"
                        ];
         var ids = [];
-        for (let i = 1; i < 53; i++){
+        for (let i = 1; i < lastIndex; i++){
             var curr = idPrefix + "";
             if (i < 10){
                 curr = curr + "0";
@@ -116,6 +117,7 @@ function clickDeath(event, num){
 }
 
 window.onload = function() {
+    let lastIndex = 56;
     setDeadCharacters();
-    setShadowHedgeHogs();
+    setShadowHedgeHogs(56);
 }
