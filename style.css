@@ -295,3 +295,7 @@ body {
 .bigArt:nth-child(odd) {
     background-color: white;
 }
+
+.hidden {
+    display: none;
+}
