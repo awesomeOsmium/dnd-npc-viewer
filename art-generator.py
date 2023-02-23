@@ -63,6 +63,12 @@ def printHTMLFile(files:list,
             title = filename.split("-")
             # Grab the id while we're at it
             id = title[0]
+            try:
+                id = int(id)
+                id = str(id)
+            except Exception as e:
+                id = title[0]
+            
             # Remove the number from the beginning of the filename
             title = title[1:-1]
             # Convert All Words In Filename To What Is Essentially Pascal Case (Capitalize Each Word)
@@ -78,7 +84,10 @@ def printHTMLFile(files:list,
                 end = "\n\n"
             else:
                 end = "\n"
-            print(htmlPrefix1, id, htmlPrefix2, size, htmlPrefix3, filename, htmlSuffix1, title, htmlSuffix2, sep="", end=end, file=outfile)
+            # print(htmlPrefix1, id, htmlPrefix2, size, htmlPrefix3, filename, htmlSuffix1, title, htmlSuffix2, sep="", end=end, file=outfile)
+            print(f"""<div id="art-{id}" class="card art-{size}" style="background-image: url(./assets/{filename})" title="">
+    <span class="tooltiptext">{title}
+</span></div>""", end=end, file=outfile)
             lastSize = size
             # Go to next iteration
         # Close the file
