@@ -1,8 +1,8 @@
 function setDeadCharacters(){
     let idPrefix = "art-";
     let ids = [
-        "02",
-        "06",
+        "2",
+        "6",
         "18",
         "34",
         "42",
@@ -18,13 +18,13 @@ function setDeadCharacters(){
 }
 
 function setShadowHedgeHogs(lastIndex){
-    let basic = "4px 4px 4px black, -4px 4px 4px black, 4px -4px 4px black, -4px -4px 4px black";
+    // let basic = "4px 4px 4px black, -4px 4px 4px black, 4px -4px 4px black, -4px -4px 4px black";
     let idPrefix = "art-";
     let ids = {
-        "art-04":"absolutumShadow",
-        "art-07":"abbyShadow",
-        "art-08":"coilbaynShadow",
-        "art-09":"huongShadow",
+        "art-4":"absolutumShadow",
+        "art-7":"abbyShadow",
+        "art-8":"coilbaynShadow",
+        "art-9":"huongShadow",
 
         "art-14":"parliamentShadow",
         "art-23":"parliamentShadow",
@@ -43,9 +43,9 @@ function setShadowHedgeHogs(lastIndex){
     for (let i = 1; i < lastIndex; i++){
         // Set up current id
         var currId = idPrefix + "";
-        if (i < 10){
-            currId = currId + "0";
-        }
+        // if (i < 10){
+        //     currId = currId + "0";
+        // }
         currId = currId + i;
 
         // Add shadowHedgehog or other shadow class to current element
@@ -86,21 +86,21 @@ function isIn(item, list){
 }
 
 function clickDeath(event, num){
-    let lastIndex = 56;
+    const lastIndex = 64;
     // if (true){
     if ((d(num) + 1) === 1){
         console.log("Killing...");
         let idPrefix = "art-";
-        let skipping = [idPrefix + "09",
+        let skipping = [idPrefix + "9",
                         idPrefix + "15",
                         idPrefix + "21"
                        ];
         var ids = [];
         for (let i = 1; i < lastIndex; i++){
             var curr = idPrefix + "";
-            if (i < 10){
-                curr = curr + "0";
-            }
+            // if (i < 10){
+            //     curr = curr + "0";
+            // }
             curr = curr + i;
             ids.push(curr);
         }
@@ -116,8 +116,56 @@ function clickDeath(event, num){
     }
 }
 
+function addClass(elementIds, idPrefix, theClass){
+    for (let i=0; i < elementIds.length; i++){
+        var id = idPrefix;
+        // if (elementIds[i] < 10){ // TODO: fix how the ids are generated so I don't have to do this fucking shit every damn time
+        //     id = id + "0";
+        // }
+        id = id + elementIds[i];
+        var curr = document.getElementById(id);
+        try {
+            curr.classList.add(theClass);
+        } catch (error) {
+            console.log("Error adding class \"" + theClass + "\" to element with id \"" + id + "\"");
+        }
+    }
+}
+
 window.onload = function() {
-    let lastIndex = 56;
-    setDeadCharacters();
-    setShadowHedgeHogs(56);
+    const lastIndex = 64;
+    const idPrefix = "art-";
+
+    // Arrays of character IDs
+    const art2 = [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29,
+         30, 35, 39, 47, 54, 55, 59, 60];
+    const art3 = [7, 15];
+    const art4 = [9];
+    const hidden = [59, 60];
+    const dead = [2, 6, 18, 34, 42, 44, 45, 47, 48];
+
+    var arrays = [art2, art3, art4];
+    let art1 = [];
+    for (let i = 1; i < lastIndex; i++){
+        var found = false;
+        for (let j = 0; j < arrays.length && !found; j++){
+            for (let k = 0; k < arrays[j].length && !found; k++){
+                if (i === arrays[j][k]){
+                    found = true;
+                }
+            }
+        }
+        if (!found){
+            art1.push(i);
+        }
+    }
+
+    addClass(art1, idPrefix, "art-1");
+    addClass(art2, idPrefix, "art-2");
+    addClass(art3, idPrefix, "art-3");
+    addClass(art4, idPrefix, "art-4");
+    addClass(hidden, idPrefix, "hidden"); // Hide some elements
+    addClass(dead, idPrefix, "dead")
+    // setDeadCharacters();
+    setShadowHedgeHogs(lastIndex);
 }
