@@ -1,24 +1,4 @@
-function setDeadCharacters(){
-    let idPrefix = "art-";
-    let ids = [
-        "2",
-        "6",
-        "18",
-        "34",
-        "42",
-        "44",
-        "45",
-        "47",
-        "48"
-    ];
-    for (let i = 0; i < ids.length; i++){
-        var curr = document.getElementById(idPrefix + ids[i]);
-        curr.classList.add("dead");
-    }
-}
-
 function setShadowHedgeHogs(lastIndex){
-    // let basic = "4px 4px 4px black, -4px 4px 4px black, 4px -4px 4px black, -4px -4px 4px black";
     let idPrefix = "art-";
     let ids = {
         "art-4":"absolutumShadow",
@@ -42,11 +22,7 @@ function setShadowHedgeHogs(lastIndex){
     };
     for (let i = 1; i < lastIndex; i++){
         // Set up current id
-        var currId = idPrefix + "";
-        // if (i < 10){
-        //     currId = currId + "0";
-        // }
-        currId = currId + i;
+        var currId = idPrefix + i;
 
         // Add shadowHedgehog or other shadow class to current element
         var curr = document.getElementById(currId);
@@ -87,21 +63,16 @@ function isIn(item, list){
 
 function clickDeath(event, num){
     const lastIndex = 64;
-    // if (true){
     if ((d(num) + 1) === 1){
         console.log("Killing...");
         let idPrefix = "art-";
-        let skipping = [idPrefix + "9",
-                        idPrefix + "15",
-                        idPrefix + "21"
+        let skipping = [idPrefix + 9,
+                        idPrefix + 15,
+                        idPrefix + 21
                        ];
         var ids = [];
         for (let i = 1; i < lastIndex; i++){
-            var curr = idPrefix + "";
-            // if (i < 10){
-            //     curr = curr + "0";
-            // }
-            curr = curr + i;
+            var curr = idPrefix + i;
             ids.push(curr);
         }
         ids = ids.filter(id => !isIn(id, skipping));
@@ -118,11 +89,7 @@ function clickDeath(event, num){
 
 function addClass(elementIds, idPrefix, theClass){
     for (let i=0; i < elementIds.length; i++){
-        var id = idPrefix;
-        // if (elementIds[i] < 10){ // TODO: fix how the ids are generated so I don't have to do this fucking shit every damn time
-        //     id = id + "0";
-        // }
-        id = id + elementIds[i];
+        var id = idPrefix + elementIds[i];
         var curr = document.getElementById(id);
         try {
             curr.classList.add(theClass);
@@ -160,12 +127,12 @@ window.onload = function() {
         }
     }
 
-    addClass(art1, idPrefix, "art-1");
-    addClass(art2, idPrefix, "art-2");
-    addClass(art3, idPrefix, "art-3");
-    addClass(art4, idPrefix, "art-4");
     addClass(hidden, idPrefix, "hidden"); // Hide some elements
     addClass(dead, idPrefix, "dead")
-    // setDeadCharacters();
     setShadowHedgeHogs(lastIndex);
+    
+    addClass(art4, idPrefix, "art-4");
+    addClass(art3, idPrefix, "art-3");
+    addClass(art2, idPrefix, "art-2");
+    addClass(art1, idPrefix, "art-1");
 }
