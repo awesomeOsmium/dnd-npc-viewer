@@ -100,16 +100,16 @@ function addClass(elementIds, idPrefix, theClass){
 }
 
 window.onload = function() {
-    const lastIndex = 64;
+    const lastIndex = 68;
     const idPrefix = "art-";
 
     // Arrays of character IDs
     const art2 = [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29,
-         30, 35, 39, 47, 54, 55, 59, 60];
+         30, 35, 39, 47, 54, 55, 59];
     const art3 = [7, 15];
     const art4 = [9];
-    const hidden = [59, 60];
-    const dead = [2, 6, 18, 34, 42, 44, 45, 47, 48];
+    const hidden = [];
+    const dead = [2, 6, 18, 34, 42, 44, 45, 47, 48, 64];
 
     var arrays = [art2, art3, art4];
     let art1 = [];
