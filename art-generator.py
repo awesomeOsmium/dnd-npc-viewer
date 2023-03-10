@@ -85,7 +85,7 @@ def printHTMLFile(files:list,
             else:
                 end = "\n"
             # print(htmlPrefix1, id, htmlPrefix2, size, htmlPrefix3, filename, htmlSuffix1, title, htmlSuffix2, sep="", end=end, file=outfile)
-            print(f"""<div id="art-{id}" class="card art-{size}" style="background-image: url(./assets/{filename})" title="">
+            print(f"""<div id="art-{id}" class="card" style="background-image: url(./assets/{filename})" title="">
     <span class="tooltiptext">{title}
 </span></div>""", end=end, file=outfile)
             lastSize = size
