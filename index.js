@@ -67,7 +67,7 @@ function isIn(item, list){
 }
 
 function clickDeath(event, num){
-    const lastIndex = 64;
+    const lastIndex = 200;
     if ((d(num) + 1) === 1){
         console.log("Killing...");
         let idPrefix = "art-";
@@ -82,12 +82,13 @@ function clickDeath(event, num){
         }
         ids = ids.filter(id => !isIn(id, skipping));
         ids = randomize(ids);
-        while (ids.length > 0){
-            var i = d(ids.length);
-            var curr = document.getElementById(ids[i]);
-            curr.classList.add("dead");
-            // console.log("Killed " + ids[i]);
-            ids = ids.filter(id => id != ids[i]);
+        for (let i = 0; i < lastIndex; i++) {
+            try {
+                var curr = document.getElementById(ids[i]);
+                curr.classList.add("dead");
+            } catch (error) {
+                console.log("Error while killing " + ids[i] + ": " + error);
+            }
         }
     }
 }
