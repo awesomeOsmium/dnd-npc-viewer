@@ -1,5 +1,4 @@
-function setShadowHedgeHogs(lastIndex){
-    let idPrefix = "art-";
+function setShadowHedgeHogs(idPrefix, lastIndex){
     let ids = {
         "art-4":"absolutumShadow",
         "art-7":"abbyShadow",
@@ -35,6 +34,12 @@ function setShadowHedgeHogs(lastIndex){
         else{
             curr.classList.add("shadowHedgehog");
         }
+    }
+    const today = new Date();
+    let month = today.getMonth();
+    let day = today.getDate();
+    if (month === 3 && day === 1){
+        aprfls([4, 9, 47], idPrefix, "./assets/doge.jpg")
     }
 }
 
@@ -99,17 +104,54 @@ function addClass(elementIds, idPrefix, theClass){
     }
 }
 
+function toggleBio(){
+    var toggler = document.getElementById("toggleBio");
+    var bios = document.getElementById("bios-main");
+    var art = document.getElementById("art");
+    try {
+        if (toggler.innerHTML === "Show bios"){
+            console.log("Showing bios...");
+            bios.style.display = "flex";
+            art.style.maxHeight = "66vh";
+            toggler.innerHTML = "Hide bios";
+            console.log("Shown bios!");
+        }
+        else if (toggler.innerHTML === "Hide bios"){
+            console.log("Hiding bios...");
+            bios.style.display = "none";
+            art.style.maxHeight = "100%";
+            toggler.innerHTML = "Show bios";
+            console.log("Hidden bios!");
+        }
+    } catch (error) {
+        console.log(error);
+        return;
+    }
+}
+
+function aprfls(elementIds, idPrefix, jokeimg){
+    for (let i=0; i < elementIds.length; i++){
+        var id = idPrefix + elementIds[i];
+        var curr = document.getElementById(id);
+        try {
+            curr.style.backgroundImage = "url(" + jokeimg + ")";
+        } catch (error) {
+            console.log("Error adding class \"" + theClass + "\" to element with id \"" + id + "\"");
+        }
+    }
+}
+
 window.onload = function() {
-    const lastIndex = 68;
+    const lastIndex = 83;
     const idPrefix = "art-";
 
     // Arrays of character IDs
-    const art2 = [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29,
-         30, 35, 39, 47, 54, 55, 59];
+    const art2 = [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29, 30, 35, 39
+        , 47, 54, 55, 59, 69, 77, 78];
     const art3 = [7, 15];
     const art4 = [9];
     const hidden = [];
-    const dead = [2, 6, 18, 34, 42, 44, 45, 47, 48, 64];
+    const dead = [2, 6, 18, 34, 42, 44, 45, 47, 48, 64, 79, 80, 81, 82];
 
     var arrays = [art2, art3, art4];
     let art1 = [];
@@ -129,7 +171,7 @@ window.onload = function() {
 
     addClass(hidden, idPrefix, "hidden"); // Hide some elements
     addClass(dead, idPrefix, "dead")
-    setShadowHedgeHogs(lastIndex);
+    setShadowHedgeHogs(idPrefix, lastIndex);
     
     addClass(art4, idPrefix, "art-4");
     addClass(art3, idPrefix, "art-3");
