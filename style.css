@@ -1,11 +1,12 @@
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    -ms-overflow-style: none;
+    /* -ms-overflow-style: none;
     scrollbar-width: none;
+    overscroll-behavior: auto; */
 }
 
 *::-webkit-scrollbar {
-    display: none;
+    /* display: none; */
 }
 
 body {
@@ -19,22 +20,33 @@ body {
 
 .primary-container {
     margin: 0;
+    padding: 0;
     position: relative;
     /* top: 32px; */
     /* width: 100vw; */
     display: flex;
     justify-content: center;
+    overflow: visible;
 }
 
 .secondary-container {
     position: relative;
-    width: 98vw;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
     /* width: auto; */
     /* margin: auto; */
     /* left: 16px;
     right: 16px; */
     display: unset;
     flex-direction: unset;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overscroll-behavior: auto;
+}
+
+.secondary-container::-webkit-scrollbar {
+    display: none;
 }
 
 .bio-div {
