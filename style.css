@@ -1,5 +1,11 @@
 * {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+    display: none;
 }
 
 body {
@@ -11,7 +17,146 @@ body {
     background-size: cover;
 }
 
+.primary-container {
+    margin: 0;
+    position: relative;
+    /* top: 32px; */
+    /* width: 100vw; */
+    display: flex;
+    justify-content: center;
+}
+
+.secondary-container {
+    position: relative;
+    width: 98vw;
+    /* width: auto; */
+    /* margin: auto; */
+    /* left: 16px;
+    right: 16px; */
+    display: unset;
+    flex-direction: unset;
+}
+
+.bio-div {
+    /* Debug */
+    /* border: 2px #0f0 dotted; */
+
+    /*  */
+    background-image: url("./assets/01-jangalore-post-shower-512.jpg");
+    background-repeat: repeat-y;
+    background-position-x: 0;
+    background-position-y: 0;
+    background-size: cover;
+    z-index: 4;
+
+    position: fixed;
+    height: 508px;
+    top: calc(66vh + 32px);
+    left: 1vw;
+
+    /* For toggling; only toggles between flex and none */
+    display: none;
+}
+
+.bio-div > div {
+    background-color: black;
+    color: white;
+    opacity: 0.8;
+    width: unset;
+    height: unset;
+    position: relative;
+    z-index: 4;
+}
+
+.slideshow {
+    position: relative;
+    max-width: 406;
+    margin: auto;
+    left: 0;
+}
+
+.slideshow > .card:hover {
+    transform: none;
+}
+
+.slides {
+    display: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    opacity: 0.8;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    --nav-height: 32px;
+    height: var(--nav-height);
+    z-index: 100;
+}
+
+ul > * {
+    font-family: monospace;
+    /* font-size: smaller; */
+}
+
+li {
+    font-family: monospace;
+    float: left;
+}
+
+li a {
+    font-family: monospace;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 4px 8px;
+    text-decoration: none;
+    user-select: none;
+}
+
+li a:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);
+    cursor: default;
+}
+
 .art-container {
+    /* Debug */
+    /* border: 2px #f00 dotted; */
+
+    /*  */
+    top: 0;
     /* https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -22,18 +167,11 @@ body {
     grid-gap: 2px;
     grid-auto-rows: minmax(80px, auto);
     grid-auto-flow: dense;
-    /* align-items: stretch; */
-}
 
-/* .art-container {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: safe space-around;
-    align-items: flex-start;
-    align-content: flex-start;
-    padding: 0;
-    margin: 0;
-} */
+    /* max-height: 66vh; */
+    max-height: 100%;
+    overflow-y: scroll;
+}
 
 .card {
     position: relative;
@@ -50,71 +188,7 @@ body {
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
-    z-index: 1;
-}
-
-.shadowHedgehog:hover {
-    transition-duration: 100ms;
-    box-shadow: 4px 4px 4px black,
-                -4px 4px 4px black,
-                4px -4px 4px black,
-                -4px -4px 4px black;
-}
-
-.abbyShadow:hover {
-    transition-duration: 100ms;
-    box-shadow: 4px 4px 4px white,
-                -4px 4px 4px white,
-                4px -4px 4px white,
-                -4px -4px 4px white;
-}
-
-.absolutumShadow:hover {
-    transition-duration: 400ms;
-    box-shadow: 4px 4px 4px black,
-                -4px 4px 4px black,
-                4px -4px 4px black,
-                -4px -4px 4px black;
-}
-
-.beetusShadow:hover {
-    transition-duration: 400ms;
-    box-shadow: 4px 4px 4px black,
-                -4px 4px 4px black,
-                4px -4px 4px black,
-                -4px -4px 4px black;
-}
-
-.coilbaynShadow:hover {
-    transition-duration: 100ms;
-    box-shadow: 4px 4px 4px #ae873c, 4px 4px 4px #5b6555,
-                -4px 4px 4px #ae873c, -4px 4px 4px #5b6555,
-                4px -4px 4px #ae873c, 4px -4px 4px #5b6555,
-                -4px -4px 4px #ae873c, -4px -4px 4px #5b6555;
-}
-
-.chembsShadow:hover {
-    transition-duration: 100ms;
-    box-shadow: 4px 4px 4px black, 4px 4px 4px #a00,
-                -4px 4px 4px black, -4px 4px 4px #a00,
-                4px -4px 4px black, 4px -4px 4px #a00,
-                -4px -4px 4px black, -4px -4px 4px #a00;
-}
-
-.huongShadow:hover {
-    transition-duration: 1600ms;
-    box-shadow: 32px 32px 32px 32px black,
-                -32px 32px 32px 32px black,
-                32px -32px 32px 32px black,
-                -32px -32px 32px 32px black;
-}
-
-.parliamentShadow:hover {
-    transition-duration: 100ms;
-    box-shadow: 4px 4px 4px #444,
-                -4px 4px 4px #444,
-                4px -4px 4px #444,
-                -4px -4px 4px #444;
+    z-index: 5;
 }
 
 .dead {
@@ -135,103 +209,50 @@ body {
     font-size: smaller;
     word-wrap: break-word;
     visibility: hidden;
-    background-color: black;
     color: #fff;
+    background-color: black;
+
+    padding: 10px;
+    
     text-align: center;
     /* padding: 5px 0; */
     border-radius: 0px;
-    right: 0;
+    /* right: 0; */
     top: 100%;
     opacity: 0.8;
 
     /* Positioning tooltip text */
     position: absolute;
-    z-index: 3;
+    z-index: 6;
 
     /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
     border-bottom: var(--h) solid #0000;
     --h: 5px;
     --w: 10px;
-    --p: 50%
+    --p: 50%;
+    right: calc(0% - var(--w));
+    left: calc(0% - var(--w));
 }
 
 .art-1 .tooltiptext {
-    min-width: 65;
-    max-width: 65px;
-    padding: 20px;
-
-    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
-    /* FLIPPED VERTICALLY */
-    clip-path: polygon(0                           var(--h), /* [1] */
-                       calc(var(--p) - var(--w)/2) var(--h), /* [2] */
-                       var(--p)                    0,        /* [3] */
-                       calc(var(--p) + var(--w)/2) var(--h), /* [4] */
-                       100%                         var(--h), /* [5] */
-                       100%                         calc(100% - var(--h)), /* [6] */
-                       0                           calc(100% - var(--h)) /* [7] */
-                      );
-    /* ORIGINAL */
-    /* clip-path: polygon(0                           0,
-                          100%                        0,
-                          100%                        calc(100% - var(--h)),
-                          calc(var(--p) - var(--w)/2) calc(100% - var(--h)),
-                          var(--p)                    100%,
-                          calc(var(--p) + var(--w)/2) calc(100% - var(--h)),
-                          0                           calc(100% - var(--h))
-                         ); */
+    min-width: 75px;
 }
 
 .art-2 .tooltiptext {
-    min-width: 170px;
-    max-width: 170px;
-    padding: 20px;
-
-    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
-    clip-path: polygon(0                           var(--h), /* [1] */
-                       calc(var(--p) - var(--w)/2) var(--h), /* [2] */
-                       var(--p)                    0,        /* [3] */
-                       calc(var(--p) + var(--w)/2) var(--h), /* [4] */
-                       100%                        var(--h), /* [5] */
-                       100%                        calc(100% - var(--h)), /* [6] */
-                       0                           calc(100% - var(--h)) /* [7] */
-                      );
+    min-width: 175px;
 }
 
 .art-3 .tooltiptext {
     min-width: 275px;
-    max-width: 275px;
-    padding: 20px;
-
-    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
-    clip-path: polygon(0                           var(--h), /* [1] */
-                       calc(var(--p) - var(--w)/2) var(--h), /* [2] */
-                       var(--p)                    0,        /* [3] */
-                       calc(var(--p) + var(--w)/2) var(--h), /* [4] */
-                       100%                        var(--h), /* [5] */
-                       100%                        calc(100% - var(--h)), /* [6] */
-                       0                           calc(100% - var(--h)) /* [7] */
-                      );
 }
 
 .art-4 .tooltiptext {
-    min-width: 380px;
-    max-width: 380px;
-    padding: 20px;
-
-    /* Speech bubble shape from https://verpex.com/blog/website-tips/how-to-create-a-tooltip-speech-bubble-using-css */
-    clip-path: polygon(0                           var(--h), /* [1] */
-                       calc(var(--p) - var(--w)/2) var(--h), /* [2] */
-                       var(--p)                    0,        /* [3] */
-                       calc(var(--p) + var(--w)/2) var(--h), /* [4] */
-                       100%                        var(--h), /* [5] */
-                       100%                        calc(100% - var(--h)), /* [6] */
-                       0                           calc(100% - var(--h)) /* [7] */
-                      );
+    min-width: 375px;
 }
 
 .card:hover .tooltiptext {
     visibility: visible;
-    z-index: 3;
+    z-index: 6;
 }
 
 /* Above CSS From https://www.w3schools.com/css/css_tooltip.asp */
@@ -298,4 +319,82 @@ body {
 
 .hidden {
     display: none;
+}
+
+.glassy {
+    /* Don't know if I like this. Maybe the image is just shit lol */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url("./assets/pngkey.com-glass-effect-png-1096969.png");
+    opacity: 0.25;
+    grid-column-end: inherit;
+    grid-row-end: inherit;
+    min-height: inherit;
+}
+
+
+
+.shadowHedgehog:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px black,
+                -4px 4px 4px black,
+                4px -4px 4px black,
+                -4px -4px 4px black;
+}
+
+.abbyShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px white,
+                -4px 4px 4px white,
+                4px -4px 4px white,
+                -4px -4px 4px white;
+}
+
+.absolutumShadow:hover {
+    transition-duration: 400ms;
+    box-shadow: 4px 4px 4px black,
+                -4px 4px 4px black,
+                4px -4px 4px black,
+                -4px -4px 4px black;
+}
+
+.beetusShadow:hover {
+    transition-duration: 400ms;
+    box-shadow: 4px 4px 4px black,
+                -4px 4px 4px black,
+                4px -4px 4px black,
+                -4px -4px 4px black;
+}
+
+.coilbaynShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px #ae873c, 4px 4px 4px #5b6555,
+                -4px 4px 4px #ae873c, -4px 4px 4px #5b6555,
+                4px -4px 4px #ae873c, 4px -4px 4px #5b6555,
+                -4px -4px 4px #ae873c, -4px -4px 4px #5b6555;
+}
+
+.chembsShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px black, 4px 4px 4px #a00,
+                -4px 4px 4px black, -4px 4px 4px #a00,
+                4px -4px 4px black, 4px -4px 4px #a00,
+                -4px -4px 4px black, -4px -4px 4px #a00;
+}
+
+.huongShadow:hover {
+    transition-duration: 1600ms;
+    box-shadow: 32px 32px 32px 32px black,
+                -32px 32px 32px 32px black,
+                32px -32px 32px 32px black,
+                -32px -32px 32px 32px black;
+}
+
+.parliamentShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px #444,
+                -4px 4px 4px #444,
+                4px -4px 4px #444,
+                -4px -4px 4px #444;
 }
