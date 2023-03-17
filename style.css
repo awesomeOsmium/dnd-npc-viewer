@@ -395,6 +395,14 @@ li a:hover {
                 -4px -4px 4px black, -4px -4px 4px #a00;
 }
 
+.eozzurShadow:hover {
+    transition-duration: 100ms;
+    box-shadow: 4px 4px 4px black, 4px 4px 4px #00a,
+                -4px 4px 4px black, -4px 4px 4px #00a,
+                4px -4px 4px black, 4px -4px 4px #00a,
+                -4px -4px 4px black, -4px -4px 4px #00a;
+}
+
 .huongShadow:hover {
     transition-duration: 1600ms;
     box-shadow: 32px 32px 32px 32px black,

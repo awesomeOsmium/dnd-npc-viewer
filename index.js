@@ -18,6 +18,9 @@ function setShadowHedgeHogs(idPrefix, lastIndex){
         "art-39":"chembsShadow",
         "art-47":"beetusShadow",
         "art-49":"chembsShadow",
+
+        "art-83":"eozzurShadow",
+        "art-84":"eozzurShadow"
     };
     for (let i = 1; i < lastIndex; i++){
         // Set up current id
@@ -143,12 +146,12 @@ function aprfls(elementIds, idPrefix, jokeimg){
 }
 
 window.onload = function() {
-    const lastIndex = 83;
+    const lastIndex = 85;
     const idPrefix = "art-";
 
     // Arrays of character IDs
     const art2 = [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29, 30, 35, 39
-        , 47, 54, 55, 59, 69, 77, 78];
+        , 47, 54, 55, 59, 69, 77, 78, 84];
     const art3 = [7, 15];
     const art4 = [9];
     const hidden = [];
