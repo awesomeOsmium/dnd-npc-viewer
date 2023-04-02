@@ -16,19 +16,25 @@ body {
     background-position-x: 0;
     background-position-y: 0;
     background-size: cover;
+    /* overflow: hidden visible; */
 }
 
 .primary-container {
-    margin: 0;
-    /* margin-top: 32px; */
-    padding: 0;
-    padding-top: 32px;
     position: relative;
-    /* top: 32px; */
-    /* width: 100vw; */
+    padding-top: 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+    /* margin-right: 16px; */
     display: flex;
-    justify-content: center;
-    overflow: visible;
+    /* justify-content: center; */
+    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overscroll-behavior: auto;
+}
+
+.primary-container::-webkit-scrollbar {
+    display: none;
 }
 
 .secondary-container {
@@ -185,7 +191,7 @@ li a:hover {
 
     /* max-height: 66vh; */
     max-height: 100%;
-    overflow-y: scroll;
+    overflow: hidden;
 }
 
 .card {
