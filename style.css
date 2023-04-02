@@ -20,7 +20,9 @@ body {
 
 .primary-container {
     margin: 0;
+    /* margin-top: 32px; */
     padding: 0;
+    padding-top: 32px;
     position: relative;
     /* top: 32px; */
     /* width: 100vw; */
@@ -122,6 +124,7 @@ body {
 ul {
     list-style-type: none;
     margin: 0;
+    margin-bottom: auto;
     padding: 0;
     overflow: hidden;
     background-color: black;
@@ -159,7 +162,7 @@ li a {
 li a:hover {
     background-color: white;
     color: black;
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     cursor: default;
 }
 
