@@ -109,6 +109,30 @@ function addClass(elementIds, idPrefix, theClass){
     }
 }
 
+function removeClass(elementIds, idPrefix, theClass){
+    for (let i=0; i < elementIds.length; i++){
+        var id = idPrefix + elementIds[i];
+        var curr = document.getElementById(id);
+        try {
+            curr.classList.remove(theClass);
+        } catch (error) {
+            console.log("Error removing class \"" + theClass + "\" from element with id \"" + id + "\"");
+        }
+    }
+}
+
+function toggleClass(elementIds, idPrefix, theClass){
+    for (let i=0; i < elementIds.length; i++){
+        var id = idPrefix + elementIds[i];
+        var curr = document.getElementById(id);
+        try {
+            curr.classList.toggle(theClass);
+        } catch (error) {
+            console.log("Error toggling class \"" + theClass + "\" on element with id \"" + id + "\"");
+        }
+    }
+}
+
 function toggleBio(){
     var toggler = document.getElementById("toggleBio");
     var bios = document.getElementById("bios-main");
@@ -146,17 +170,55 @@ function aprfls(elementIds, idPrefix, jokeimg){
     }
 }
 
+function toggleDupes(btn){
+    const idPrefix = "art-";
+    const hide = "Hide Duplicates";
+    const show = "Show Duplicates";
+    const dupes = [42, 45, 49, 63, 83, 85];
+    toggleClass(dupes, idPrefix, "hidden");
+    try {
+        if (btn.innerHTML === hide){
+            btn.innerHTML = show;
+        }
+        else{
+            btn.innerHTML = hide;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+function toggleDead(btn){
+    const idPrefix = "art-";
+    const hide = "Hide Dead";
+    const show = "Show Dead";
+    const dead = [2, 6, 18, 27, 34, 38, 42, 44, 45, 47, 48, 64,
+                  79, 80, 81, 82];
+    toggleClass(dead, idPrefix, "hidden");
+    try {
+        if (btn.innerHTML === hide){
+            btn.innerHTML = show;
+        }
+        else{
+            btn.innerHTML = hide;
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 window.onload = function() {
     const lastIndex = 86;
     const idPrefix = "art-";
 
     // Arrays of character IDs
-    const art2 = [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29, 30, 35, 39
-        , 47, 54, 55, 59, 69, 77, 78, 84];
+    const art2 = [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29, 30,
+                  35, 39, 47, 54, 55, 59, 69, 77, 78, 84];
     const art3 = [7, 15];
     const art4 = [9];
     const hidden = [];
-    const dead = [2, 6, 18, 27, 34, 42, 44, 45, 47, 48, 64, 79, 80, 81, 82];
+    const dead = [2, 6, 18, 27, 34, 38, 42, 44, 45, 47, 48, 64,
+                  79, 80, 81, 82];
 
     var arrays = [art2, art3, art4];
     let art1 = [];
