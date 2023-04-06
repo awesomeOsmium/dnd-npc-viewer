@@ -5,15 +5,17 @@ function setShadowHedgeHogs(idPrefix, lastIndex){
         "art-8":"coilbaynShadow",
         "art-9":"huongShadow",
 
-        "art-14":"parliamentShadow",
-        "art-23":"parliamentShadow",
-        "art-24":"parliamentShadow",
-        "art-25":"parliamentShadow",
-        "art-26":"parliamentShadow",
-        "art-27":"parliamentShadow",
-        "art-28":"parliamentShadow",
-        "art-29":"parliamentShadow",
-        "art-30":"parliamentShadow",
+        "art-12":"parliamentShadow", // Moon Goat
+        "art-14":"parliamentShadow", // Quorum
+        "art-23":"parliamentShadow", // Gail
+        "art-24":"parliamentShadow", // Bridehead
+        "art-25":"parliamentShadow", // Axewolf
+        "art-26":"parliamentShadow", // Tomogui
+        "art-27":"parliamentShadow", // JP Mortal
+        "art-28":"parliamentShadow", // Win
+        "art-29":"parliamentShadow", // Slimegrond
+        "art-30":"parliamentShadow", // Handless Joe
+        "art-46":"parliamentShadow", // Zelnogg Leadtooth
 
         "art-39":"chembsShadow",
         "art-47":"beetusShadow",
@@ -175,12 +177,14 @@ function toggleDupes(btn){
     const hide = "Hide Duplicates";
     const show = "Show Duplicates";
     const dupes = [42, 45, 49, 63, 83, 85];
-    toggleClass(dupes, idPrefix, "hidden");
+    // toggleClass(dupes, idPrefix, "hidden");
     try {
         if (btn.innerHTML === hide){
             btn.innerHTML = show;
+            addClass(dupes, idPrefix, "hidden");
         }
         else{
+            removeClass(dupes, idPrefix, "hidden");
             btn.innerHTML = hide;
         }
     } catch (error) {
@@ -198,9 +202,11 @@ function toggleDead(btn){
     try {
         if (btn.innerHTML === hide){
             btn.innerHTML = show;
+            addClass(dead, idPrefix, "hidden");
         }
         else{
             btn.innerHTML = hide;
+            removeClass(dead, idPrefix, "hidden");
         }
     } catch (error) {
         console.log(error);
