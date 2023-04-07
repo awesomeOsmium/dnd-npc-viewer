@@ -24,107 +24,30 @@ body {
     padding-top: 32px;
     padding-left: 16px;
     padding-right: 16px;
-    /* margin-right: 16px; */
     display: flex;
-    /* justify-content: center; */
-    overflow: hidden;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overscroll-behavior: auto;
+}
+
+.art-container {
+    /* Debug */
+    /* border: 2px #f00 dotted; */
+
+    /* https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
+    /* auto-fit is the wrong choice here (despite having a seemingly identical result to auto-fill)
+    because if you had a viewport long enough to show all characters in a single row, auto-fit would
+    begin to stretch the characters to fit the container, which is NOT ideal for this use case */
+    grid-gap: 2px;
+    grid-auto-rows: minmax(80px, auto);
+    grid-auto-flow: dense;
 }
 
 .primary-container::-webkit-scrollbar {
     display: none;
-}
-
-.secondary-container {
-    position: relative;
-    width: 100%;
-    padding-left: 16px;
-    padding-right: 16px;
-    /* width: auto; */
-    /* margin: auto; */
-    /* left: 16px;
-    right: 16px; */
-    display: unset;
-    flex-direction: unset;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    overscroll-behavior: auto;
-}
-
-.secondary-container::-webkit-scrollbar {
-    display: none;
-}
-
-.bio-div {
-    /* Debug */
-    /* border: 2px #0f0 dotted; */
-
-    /*  */
-    background-image: url("./assets/01-jangalore-post-shower-512.jpg");
-    background-repeat: repeat-y;
-    background-position-x: 0;
-    background-position-y: 0;
-    background-size: cover;
-    z-index: 4;
-
-    position: fixed;
-    height: 508px;
-    top: calc(66vh + 32px);
-    left: 1vw;
-
-    /* For toggling; only toggles between flex and none */
-    display: none;
-}
-
-.bio-div > div {
-    background-color: black;
-    color: white;
-    opacity: 0.8;
-    width: unset;
-    height: unset;
-    position: relative;
-    z-index: 4;
-}
-
-.slideshow {
-    position: relative;
-    max-width: 406;
-    margin: auto;
-    left: 0;
-}
-
-.slideshow > .card:hover {
-    transform: none;
-}
-
-.slides {
-    display: none;
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
 }
 
 ul {
@@ -147,7 +70,6 @@ ul {
 
 ul > * {
     font-family: monospace;
-    /* font-size: smaller; */
 }
 
 li {
@@ -168,30 +90,7 @@ li a {
 li a:hover {
     background-color: white;
     color: black;
-    /* transform: scale(1.1); */
     cursor: default;
-}
-
-.art-container {
-    /* Debug */
-    /* border: 2px #f00 dotted; */
-
-    /*  */
-    top: 0;
-    /* https://css-tricks.com/auto-sizing-columns-css-grid-auto-fill-vs-auto-fit/ */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    /* grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); */
-    /* auto-fit is the wrong choice here (despite having a seemingly identical result to auto-fill)
-    because if you had a viewport long enough to show all characters in a single row, auto-fit would
-    begin to stretch the characters to fit the container, which is NOT ideal for this use case */
-    grid-gap: 2px;
-    grid-auto-rows: minmax(80px, auto);
-    grid-auto-flow: dense;
-
-    /* max-height: 66vh; */
-    max-height: 100%;
-    overflow: hidden;
 }
 
 .card {
@@ -201,8 +100,6 @@ li a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% 50%;
-    /* transition-delay: 100ms; */
-    /* transition-timing-function: ease-in-out; */
 }
 
 .card:hover {
@@ -236,9 +133,7 @@ li a:hover {
     padding: 10px;
     
     text-align: center;
-    /* padding: 5px 0; */
     border-radius: 0px;
-    /* right: 0; */
     top: 100%;
     opacity: 0.8;
 
@@ -279,82 +174,32 @@ li a:hover {
 /* Above CSS From https://www.w3schools.com/css/css_tooltip.asp */
 
 .art-1 {
-    /* max-width: 100%; */
     grid-column-end: span 1;
     grid-row-end: span 1;
     min-height: 100px;
 }
 
 .art-2 {
-    /* max-width: 100%; */
     grid-column-end: span 2;
     grid-row-end: span 2;
     min-height: 200px;
 }
 
 .art-3 {
-    /* max-width: 100%; */
     grid-column-end: span 3;
     grid-row-end: span 3;
     min-height: 300px;
 }
 
 .art-4 {
-    /* max-width: 100%; */
     grid-column-end: span 4;
     grid-row-end: span 4;
     min-height: 400px;
 }
 
-/* .art {
-    display: inline-flex;
-    image-rendering: optimizeQuality;
-    padding: 2px;
-    width: 128px;
-    height: 128px;
-}
-
-.bigArt {
-    display: inline-flex;
-    image-rendering: optimizeQuality;
-    padding: 4px;
-    width: 256px;
-    height: 256px;
-} */
-
-.art:nth-child(even) {
-    background-color: black;
-}
-
-.art:nth-child(odd) {
-    background-color: white;
-}
-
-.bigArt:nth-child(even) {
-    background-color: black;
-}
-
-.bigArt:nth-child(odd) {
-    background-color: white;
-}
-
 .hidden {
     display: none;
 }
-
-.glassy {
-    /* Don't know if I like this. Maybe the image is just shit lol */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: 50% 50%;
-    background-image: url("./assets/pngkey.com-glass-effect-png-1096969.png");
-    opacity: 0.25;
-    grid-column-end: inherit;
-    grid-row-end: inherit;
-    min-height: inherit;
-}
-
-
 
 .shadowHedgehog:hover {
     transition-duration: 100ms;
