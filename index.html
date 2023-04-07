@@ -15,17 +15,16 @@
     <ul>
       <li><a id="toggleDupes" onclick="toggleDupes(this)">Hide Duplicates</a></li>
       <li><a id="toggleDead" onclick="toggleDead(this)">Hide Dead</a></li>
+      <li><a id="toggleSizing" onclick="toggleSizing(this)">Small Sizing</a></li>
       <!-- Keep source link @ end of list -->
-      <li><a id="source" href="https://github.com/awesomeOsmium/dnd-npc-viewer">Source</a></li>
       <!-- <li><a id="toggleBio" onclick="toggleBio()">Show bios</a></li>
       <li><a>op</a></li>
       <li><a>op</a></li>
       <li><a>op</a></li>
-      <li><a>op</a></li>
       <li><a>op</a></li> -->
+      <li><a id="source" href="https://github.com/awesomeOsmium/dnd-npc-viewer">Source</a></li>
     </ul>
     <div id="art" class="primary-container art-container">
-      <!-- <div id="art" class="secondary-container"> -->
       <div id="art-1" class="card" style="background-image: url(./assets/01-jangalore-post-shower-512.jpg)">
         <span class="tooltiptext">Jangalore
           (Post Shower)</span>
@@ -224,6 +223,7 @@
         <span class="tooltiptext">Asshole2
         </span>
       </div>
+
       <div id="art-54" class="card" style="background-image: url(./assets/54-rudie-grob-640.jpg)">
         <span class="tooltiptext">Rudie Grob
         </span>
@@ -243,10 +243,12 @@
       <div id="art-58" class="card" style="background-image: url(./assets/58-lars-smelt-192.png)">
         <span class="tooltiptext">Lars Smelt (God-Emperor of Brownwall)
         </span></div>
+
       <div id="art-59" class="card" style="background-image: url(./assets/59-grandoborous-512.jpg)">
         <span class="tooltiptext">The Great Wizard Grandoborous
         </span></div>
-      <div id="art-60" class="card" style="background-image: url(./assets/60-tome-of-seeing-512.jpg)">
+      
+        <div id="art-60" class="card" style="background-image: url(./assets/60-tome-of-seeing-512.jpg)">
         <span class="tooltiptext">The Tome of Seeing
         </span></div>
       <div id="art-61" class="card" style="background-image: url(./assets/61-filthos-of-brownwall-640.png)">
@@ -264,6 +266,7 @@
       <div id="art-65" class="card" style="background-image: url(./assets/65-xolmiroth,-the-aether-born,-lord-of-order-512.jpeg)">
           <span class="tooltiptext">Xolmiroth, The Aether Born, Lord Of Order
         </span></div>
+
       <div id="art-66" class="card" style="background-image: url(./assets/66-schlingel-256.jpg)">
           <span class="tooltiptext">Schlingel
         </span></div>
@@ -272,9 +275,12 @@
       </span></div>
       <div id="art-68" class="card art-1" style="background-image: url(./assets/68-scrub-tree-128.png)" title="">
           <span class="tooltiptext">Scrub Tree
-      </span></div><div id="art-69" class="card" style="background-image: url(./assets/69-prime-minister-andromeda-silverhill-512.jpg)" title="">
+      </span></div>
+
+      <div id="art-69" class="card" style="background-image: url(./assets/69-prime-minister-andromeda-silverhill-512.jpg)" title="">
         <span class="tooltiptext">Prime Minister Andromeda Silverhill
       </span></div>
+
       <div id="art-70" class="card" style="background-image: url(./assets/70-peanut-maximum-192.jpg)" title="">
           <span class="tooltiptext">Peanut Maximum
       </span></div>
@@ -296,12 +302,14 @@
       <div id="art-76" class="card" style="background-image: url(./assets/76-rigoberto-world-famous-512.jpg)" title="">
         <span class="tooltiptext">Rigoberto World Famous
       </span></div>
+
       <div id="art-77" class="card" style="background-image: url(./assets/77-THUDS-commander-640.jpg)" title="">
           <span class="tooltiptext">THUDS Commander
       </span></div>
       <div id="art-78" class="card" style="background-image: url(./assets/78-mr-alzemorn-jonesz-512.jpg)" title="">
           <span class="tooltiptext">Mr. Alzemorn Jonesz
       </span></div>
+
       <div id="art-79" class="card" style="background-image: url(./assets/79-absolutum-handler-192.png)" title="">
           <span class="tooltiptext">Absolutum's Handler
       </span></div>
@@ -317,39 +325,47 @@
       <div id="art-83" class="card" style="background-image: url(./assets/83-eozzur-the-clean\'s-human-form-\(emil-bergmann\)-192.jpg)" title="">
         <span class="tooltiptext">Emil Bergmann (Eozzur, The Clean (Human Form))
       </span></div>
+
       <div id="art-84" class="card" style="background-image: url(./assets/84-eozzur-the-clean-416.jpg)" title="">
           <span class="tooltiptext">Eozzur, The Clean
       </span></div>
+
       <div id="art-85" class="card" style="background-image: url(./assets/85-chembanat-human-256.png)" title="">
         <span class="tooltiptext">Chembanat (Chembanat's Human Form)
-    </span></div>
-      <!-- </div> -->
-      <!-- <div id="bios-main" class="bio-div secondary-container">
-        <div id="bio-slideshow" class="slideshow">
-          <div class="mySlides fade">
-            <div class="art-4">1 / 3</div>
-            <div class="text">Caption Text</div>
-          </div>
-          <div class="mySlides fade">
-            <div class="art-4">2 / 3</div>
-            <div class="text">Caption Two</div>
-          </div>
-          <div class="mySlides fade">
-            <div class="art-4">3 / 3</div>
-            <div class="text">Caption Three</div>
-          </div>
-
-          <a class="prev" onclick="updateSlide(-1)">&#10094;</a>
-          <a class="next" onclick="updateSlide(1)">&#10095;</a>
-          
-          <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-          </div>
-        </div>
-        <div id="biography"></div>
-      </div> -->
+      </span></div>
+      <div id="art-86" class="card" style="background-image: url(./assets/86-sandra-448.jpg)" title="">
+        <span class="tooltiptext">Sandra
+      </span></div>
+      <div id="art-87" class="card" style="background-image: url(./assets/87-michelle-640.jpg)" title="">
+          <span class="tooltiptext">Michelle
+      </span></div>
+      <div id="art-88" class="card" style="background-image: url(./assets/88-brody-huntingmour-128.png)" title="">
+          <span class="tooltiptext">Brody Huntingmour (Axewolf's Proxy in Parliament)
+      </span></div>
+      <div id="art-89" class="card" style="background-image: url(./assets/89-thuds-rogen-512.jpeg)" title="">
+          <span class="tooltiptext">THUDS Rogen
+      </span></div>
+      <div id="art-90" class="card" style="background-image: url(./assets/90-a-chicken-\(THUDS-hostage\)-128.jpg)" title="">
+          <span class="tooltiptext">A Chicken (THUDS Hostage)
+      </span></div>
+      <div id="art-91" class="card" style="background-image: url(./assets/91-thuds-astrologer-192.jpg)" title="">
+          <span class="tooltiptext">THUDS Astrologer
+      </span></div>
+      <div id="art-92" class="card" style="background-image: url(./assets/92-thuds-pope-256.jpg)" title="">
+          <span class="tooltiptext">THUDS Pope
+      </span></div>
+      <div id="art-93" class="card" style="background-image: url(./assets/93-THUDS-hostage-320.jpg)" title="">
+          <span class="tooltiptext">THUDS Hostage
+      </span></div>
+      <div id="art-94" class="card" style="background-image: url(./assets/94-khosi-hellman-\(THUDS-hostage\)-448.jpg)" title="">
+          <span class="tooltiptext">Khosi Hellman (THUDS Hostage)
+      </span></div>
+      <div id="art-95" class="card" style="background-image: url(./assets/95-THUDS-hostage-320.jpg)" title="">
+          <span class="tooltiptext">THUDS Hostage
+      </span></div>
+      <div id="art-96" class="card" style="background-image: url(./assets/96-THUDS-hostage-256.jpg)" title="">
+          <span class="tooltiptext">THUDS Hostage
+      </span></div>
     </div>
   </body>
 </html>
