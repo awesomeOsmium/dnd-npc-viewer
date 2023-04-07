@@ -197,7 +197,7 @@ function toggleDead(btn){
     const hide = "Hide Dead";
     const show = "Show Dead";
     const dead = [2, 6, 18, 27, 34, 38, 42, 44, 45, 47, 48, 64,
-                  79, 80, 81, 82];
+                  79, 80, 81, 82, 90];
     toggleClass(dead, idPrefix, "hidden");
     try {
         if (btn.innerHTML === hide){
@@ -213,21 +213,60 @@ function toggleDead(btn){
     }
 }
 
-window.onload = function() {
-    const lastIndex = 86;
-    const idPrefix = "art-";
+function art2(){
+    return [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29, 30,
+            35, 39, 47, 54, 55, 59, 66, 69, 77, 78, 84];
+}
 
+function art3(){
+    return [7, 15];
+}
+
+function art4(){
+    return [9];
+}
+
+function hidden(){
+    return [];
+}
+
+function dead(){
+    return [2, 6, 18, 27, 34, 38, 42, 44, 45, 47, 48, 64,
+            79, 80, 81, 82, 90];
+}
+
+function toggleSizing(element){
+    const smol = "Small Sizing";
+    const def = "Default Sizing";
+    if (element.innerHTML === smol){
+        constantSizing(97, "art-");
+        element.innerHTML = def;
+    }
+    else if (element.innerHTML === def){
+        defaultSizing(97, "art-");
+        element.innerHTML = smol;
+    }
+}
+
+function constantSizing(lastIndex, idPrefix){
+    let ids = [];
+    for (let i = 1; i < lastIndex; i++){
+        ids.push(i);
+    }
+    removeClass(ids, idPrefix, "art-4");
+    removeClass(ids, idPrefix, "art-3");
+    removeClass(ids, idPrefix, "art-2");
+    addClass(ids, idPrefix, "art-1");
+}
+
+function defaultSizing(lastIndex, idPrefix){
     // Arrays of character IDs
-    const art2 = [2, 4, 14, 16, 23, 24, 25, 26, 27, 28, 29, 30,
-                  35, 39, 47, 54, 55, 59, 69, 77, 78, 84];
-    const art3 = [7, 15];
-    const art4 = [9];
-    const hidden = [];
-    const dead = [2, 6, 18, 27, 34, 38, 42, 44, 45, 47, 48, 64,
-                  79, 80, 81, 82];
+    let dubs = art2();
+    let trips = art3();
+    let quads = art4();
 
     var arrays = [art2, art3, art4];
-    let art1 = [];
+    let singles = [];
     for (let i = 1; i < lastIndex; i++){
         var found = false;
         for (let j = 0; j < arrays.length && !found; j++){
@@ -238,16 +277,25 @@ window.onload = function() {
             }
         }
         if (!found){
-            art1.push(i);
+            singles.push(i);
         }
     }
 
-    addClass(hidden, idPrefix, "hidden"); // Hide some elements
-    addClass(dead, idPrefix, "dead")
+    addClass(quads, idPrefix, "art-4");
+    addClass(trips, idPrefix, "art-3");
+    addClass(dubs, idPrefix, "art-2");
+    addClass(singles, idPrefix, "art-1");
+}
+
+window.onload = function() {
+    const lastIndex = 97;
+    const idPrefix = "art-";
+
+    defaultSizing(lastIndex, idPrefix);
+
+    let hiddenChars = hidden();
+    let deadChars = dead();
+    addClass(hiddenChars, idPrefix, "hidden"); // Hide some elements
+    addClass(deadChars, idPrefix, "dead");
     setShadowHedgeHogs(idPrefix, lastIndex);
-    
-    addClass(art4, idPrefix, "art-4");
-    addClass(art3, idPrefix, "art-3");
-    addClass(art2, idPrefix, "art-2");
-    addClass(art1, idPrefix, "art-1");
 }
