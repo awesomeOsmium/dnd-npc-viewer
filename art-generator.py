@@ -23,7 +23,14 @@ sizes = {
     "29-lord-slash-slimegrond-640.jpg":2,
     "30-ser-handless-joe-mildscar-320.jpg":2,
     "35-abbys-kids-640.jpg":2,
-    "47-admetus-the-beetus-brutus-704.jpeg":2
+    "47-admetus-the-beetus-brutus-704.jpeg":2,
+    "54-rudie-grob-640.jpg":2,
+    "55-ariachbaras-640.jpg":2,
+    "66-schlingel-256.jpg":2,
+    "69-prime-minister-andromeda-silverhill-512.jpg":2,
+    "77-THUDS-commander-640.jpg":2,
+    "78-mr-alzemorn-jonesz-512.jpg":2,
+    "84-eozzur-the-clean-416.jpg":2
 }
 
 def replaceDelimiters(target:str, newDelimiter:str="-", delimiters:list=[]):
